@@ -162,9 +162,9 @@ function displayFontData() {
                     return JSON.stringify(item);
                 }).join('<br>');
             } else if (typeof value === 'object') {
-                html += Array.prototype.map(value.keys(),((function (key) {
+                html += Array.prototype.map(((function (key) {
                     return '<dt>' + key + '</dt><dd>' + value[key] + '</dd>';
-                }).bind(this))).join('<br>');
+                }).bind(this)), value.keys()).join('<br>');
             } else {
                 html += value;
             }
